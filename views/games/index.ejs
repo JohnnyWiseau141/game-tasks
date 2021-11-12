@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<h1><%= title %></h1>
+<form action="/games" method="POST">
+  <input type="text" name="title">
+  <input type="checkbox" name="complete">
+  <button type="submit">Add Game</button>
+</form>
+<% games.forEach(game => { %>
+  <li> <a href="/games/<%= game._id %>"><%=game.title%></a>  (Complete?: <%= game.complete? 'yes' : 'no' %>) </li>
+  <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+  <button type="submit">X</button></form>
+<% }) %>
+
+
+<%- include('../partials/footer') %>
