@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h1><%= title %></h1>
+<form action="/tasks" method="POST">
+  <input type="text" name="title" placeholder="Enter task to do here">
+  <input type="checkbox" name="complete">
+  <button type="submit">Create Task</button>
+</form>
+
+<ul>
+  <% tasks.forEach(task => { %>
+    <li>
+      <%=task.title%> Complete: <%= task.complete? 'COMPLETE' : 'INCOMPLETE' %> <a href="/tasks/<%= task._id %>">Update Task</a>
+    </li>
+
+    <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST">
+      
+      <button type="submit">DELETE TASK</button>
+
+    </form>
+  <% }) %>
+</ul>
+
+
+<%- include('../partials/footer') %>

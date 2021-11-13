@@ -8,11 +8,19 @@
   <input type="checkbox" name="complete">
   <button type="submit">Add Game</button>
 </form>
-<% games.forEach(game => { %>
-  <li> <%=game.title%> (Tasks Completed? <%= game.complete? 'yes' : 'no' %>) <a href="/games/<%= game._id %>">Edit game and completion status</a> </li>
-  <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-  <button type="submit">X</button></form>
-<% }) %>
+<ul>
+  <% games.forEach(game => { %>
+    <li> 
+      <%=game.title%> (Tasks Completed? <%= game.complete? 'yes' : 'no' %>) <a href="/games/<%= game._id %>">Edit game and completion status</a> 
+    </li>
+
+    <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+      
+      <button type="submit">X</button>
+
+    </form>
+  <% }) %>
+</ul>
 
 
 <%- include('../partials/footer') %>

@@ -21,6 +21,7 @@ import('./config/passport.js')
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as gamesRouter } from './routes/games.js'
+import { router as tasksRouter } from './routes/tasks.js'
 
 // view engine setup
 app.set(
@@ -60,6 +61,7 @@ app.use(passport.session())
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/games', gamesRouter)
+app.use('/tasks', tasksRouter)
 
 
 // catch 404 and forward to error handler
