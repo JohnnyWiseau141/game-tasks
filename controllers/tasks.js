@@ -1,4 +1,4 @@
-import { Task } from "../models/task.js";
+import { Task } from "../models/task.js"
 
 function index(req, res) {
   Task.find({}, function(err, tasks) {
@@ -12,10 +12,19 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.complete = !!req.body.complete
-  const task = new Task(req.body)
-  task.save(function(err) {
+  Task.create(req.body, function(err) {
     console.log(err)
     res.redirect('/tasks')
+  })
+}
+
+function show(req, res) {
+  Task.findById(req.params.id, function(err, task) {
+    res.render('tasks/show', {
+      title: 'Task Edit',
+      task,
+      user: req.user
+    })
   })
 }
 
@@ -23,4 +32,5 @@ function create(req, res) {
 export {
   index,
   create,
+  show
 }

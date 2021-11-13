@@ -2,8 +2,10 @@ import { Router } from 'express'
 import * as tasksCtrl from '../controllers/tasks.js'
 const router = Router()
 
+
 router.get('/', isLoggedIn, tasksCtrl.index)
 router.post('/', isLoggedIn, tasksCtrl.create)
+router.get('/:id', isLoggedIn, tasksCtrl.show)
 
 
 
