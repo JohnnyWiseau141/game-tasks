@@ -10,6 +10,17 @@ function index(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.complete = !!req.body.complete
+  const task = new Task(req.body)
+  task.save(function(err) {
+    console.log(err)
+    res.redirect('/tasks')
+  })
+}
+
+
 export {
-  index
+  index,
+  create,
 }
