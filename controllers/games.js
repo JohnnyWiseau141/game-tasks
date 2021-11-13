@@ -23,7 +23,7 @@ function show(req, res) {
   Game.findById(req.params.id, function(err, game) {
     res.render('games/show', {
       game,
-      title: 'Game Detail',
+      title: 'Game Edit',
       user: req.user ? req.user : null
     })
   })

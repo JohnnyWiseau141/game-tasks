@@ -6,7 +6,7 @@ const router = Router()
 router.get('/', isLoggedIn, tasksCtrl.index)
 router.post('/', isLoggedIn, tasksCtrl.create)
 router.get('/:id', isLoggedIn, tasksCtrl.show)
-
+router.put('/:id', isLoggedIn, tasksCtrl.update)
 
 
 function isLoggedIn(req, res, next) {

@@ -11,12 +11,14 @@
 <ul>
   <% tasks.forEach(task => { %>
     <li>
-      <%=task.title%> Complete: <%= task.complete? '✅' : 'INCOMPLETE' %> <a href="/tasks/<%= task._id %>">Update Task</a>
+      <%=task.title%> 
+      <br>
+      Completed: <%= task.complete? '✅' : '❌' %> 
     </li>
 
     <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST">
-
-      <button type="submit">X</button>
+      <a href="/tasks/<%= task._id %>">Update Task</a>
+      <button type="submit">DELETE</button>
 
     </form>
   <% }) %>

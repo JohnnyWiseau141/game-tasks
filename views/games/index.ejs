@@ -11,12 +11,12 @@
 <ul>
   <% games.forEach(game => { %>
     <li> 
-      <%=game.title%> (Tasks Completed? <%= game.complete? 'yes' : 'no' %>) <a href="/games/<%= game._id %>">Edit game and completion status</a> 
+      <%=game.title%> Tasks Completed? <%= game.complete? '✅' : '❌' %>  
     </li>
 
     <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
-      
-      <button type="submit">X</button>
+      <a href="/games/<%= game._id %>">Edit game and completion status</a>
+      <button type="submit">DELETE</button>
 
     </form>
   <% }) %>

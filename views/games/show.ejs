@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<h1><%= title %></h1>
 
 <form action="/games/<%= game._id %>?_method=PUT" method="POST">
-  <input type="text" name="title" placeholder="<% game.title %>">
+  <input type="text" name="title" value="<%= game.title %>">
   <input type="checkbox" name="complete" <%= game.complete ? 'checked' : '' %>>
   <button type="submit">Update game</button>
 </form>
