@@ -5,7 +5,7 @@
 <form action="/games/<%= game._id %>?_method=PUT" method="POST">
   <input type="text" name="title" placeholder="<% game.title %>">
   <input type="checkbox" name="complete" <%= game.complete ? 'checked' : '' %>>
-  <button type="submit">Update game</button>
+  <button type="submit">Update game(s)</button>
 </form>
 
 <%- include('../partials/footer') %>

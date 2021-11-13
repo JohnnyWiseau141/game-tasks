@@ -4,12 +4,12 @@
 
 <h1><%= title %></h1>
 <form action="/games" method="POST">
-  <input type="text" name="title">
+  <input type="text" name="title" placeholder="Enter your game here">
   <input type="checkbox" name="complete">
   <button type="submit">Add Game</button>
 </form>
 <% games.forEach(game => { %>
-  <li> <a href="/games/<%= game._id %>"><%=game.title%></a>  (Complete?: <%= game.complete? 'yes' : 'no' %>) </li>
+  <li> <%=game.title%> (Tasks Completed? <%= game.complete? 'yes' : 'no' %>) <a href="/games/<%= game._id %>">Edit game and completion status</a> </li>
   <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
   <button type="submit">X</button></form>
 <% }) %>
