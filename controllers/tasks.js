@@ -36,10 +36,18 @@ function update(req, res) {
   })
 }
 
+function deleteTask(req, res) {
+  Task.findByIdAndDelete(req.params.id, function(err, task) {
+    console.log(err)
+    res.redirect(`/games/${req.body.game}`)
+  })
+}
+
 
 export {
   index,
   create,
   show,
-  update
+  update,
+  deleteTask as delete
 }

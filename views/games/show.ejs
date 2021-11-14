@@ -17,7 +17,13 @@
   <% tasks.forEach(task => { %>
     <li>
       <a href="/tasks/<%= task._id %>"><%= task.title %></a> - Complete? <%= task.complete? '✅' : '❌' %>  
+      <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST">
+        <input type="hidden" name="game" value="<%= task.game %>">
+        <button type="submit">DELETE</button>
+  
+      </form>
     </li>
+    
   <% }) %>
 </ul>
 
