@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const gameSchema = new Schema ({
   title: String,
   complete: Boolean,
-  tasks: [{type: Schema.Types.ObjectId, ref: 'Task'}],
+  collectedBy: { type: Schema.Types.ObjectId, ref: "Profile" }
 }, {
   timestamps: true
 })

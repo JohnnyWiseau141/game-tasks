@@ -5,6 +5,7 @@
 <h1><%= title %></h1>
 <form action="/games" method="POST">
   <input type="text" name="title" placeholder="Enter your game here">
+  <input type="hidden" name="collectedBy" value="<%= user.profile._id %>">
   <input type="checkbox" name="complete">
   <button type="submit">Add Game</button>
 </form>

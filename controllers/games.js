@@ -1,7 +1,7 @@
 import { Game } from "../models/game.js";
 
 function index(req, res) {
-  Game.find({}, function(err, games) {
+  Game.find({collectedBy: req.user.profile._id}, function(err, games) {
     res.render('games/index', {
       title: 'Games',
       games,
