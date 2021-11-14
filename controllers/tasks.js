@@ -32,7 +32,7 @@ function update(req, res) {
   req.body.complete = !!req.body.complete
   Task.findByIdAndUpdate(req.params.id, req.body, function(err, task) {
     console.log(err)
-    res.redirect('/tasks')
+    res.redirect(`/games/${req.body.game}`)
   })
 }
 

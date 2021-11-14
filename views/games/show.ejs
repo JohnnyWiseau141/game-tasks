@@ -16,7 +16,7 @@
 <ul>
   <% tasks.forEach(task => { %>
     <li>
-      <%= task.title %> - Complete? <%= task.complete? '✅' : '❌' %>  
+      <a href="/tasks/<%= task._id %>"><%= task.title %></a> - Complete? <%= task.complete? '✅' : '❌' %>  
     </li>
   <% }) %>
 </ul>

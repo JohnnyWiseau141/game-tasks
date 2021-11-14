@@ -5,6 +5,7 @@
 
 <form action="/tasks/<%= task._id %>?_method=PUT" method="POST">
   <input type="text" name="title" value="<%= task.title %>">
+  <input type="hidden" name="game" value="<%= task.game %>">
   <input type="checkbox" name="complete" <%= task.complete ? 'checked' : '' %>>
   <button type="submit">Update task</button>
 </form>
