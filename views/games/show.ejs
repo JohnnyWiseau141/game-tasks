@@ -9,4 +9,24 @@
   <button type="submit">Update game</button>
 </form>
 
+<h2>Tasks</h2>
+<% if (!tasks.length) { %>
+  <p>You have no tasks!</p>
+<% } %>
+<ul>
+  <% tasks.forEach(task => { %>
+    <li>
+      <%= task.title %> - Complete? <%= task.complete? '✅' : '❌' %>  
+    </li>
+  <% }) %>
+</ul>
+
+<form action="/tasks" method="POST">
+  <input type="text" name="title" placeholder="Enter task to do here">
+  <input type="hidden" name="game" value="<%= game._id %>">
+  <input type="checkbox" name="complete">
+  <button type="submit">Create Task</button>
+</form>
+
+
 <%- include('../partials/footer') %>

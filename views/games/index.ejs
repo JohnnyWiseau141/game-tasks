@@ -12,7 +12,7 @@
 <ul>
   <% games.forEach(game => { %>
     <li> 
-      <%=game.title%> Tasks Completed? <%= game.complete? '✅' : '❌' %>  
+      <%=game.title%> - Tasks Completed? <%= game.complete? '✅' : '❌' %>  
     </li>
 
     <form action="/games/<%= game._id %>?_method=DELETE" method="POST">

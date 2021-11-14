@@ -1,4 +1,5 @@
 import { Game } from "../models/game.js";
+import { Task } from "../models/task.js"
 
 function index(req, res) {
   Game.find({collectedBy: req.user.profile._id}, function(err, games) {
@@ -21,10 +22,13 @@ function create(req, res) {
 
 function show(req, res) {
   Game.findById(req.params.id, function(err, game) {
-    res.render('games/show', {
-      game,
-      title: 'Game Edit',
-      user: req.user ? req.user : null
+    Task.find({ game: game._id }, function(err, tasks) {
+      res.render('games/show', {
+        game,
+        tasks,
+        title: 'Game Edit',
+        user: req.user ? req.user : null
+      })
     })
   })
 }

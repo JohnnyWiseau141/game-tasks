@@ -14,7 +14,7 @@ function create(req, res) {
   req.body.complete = !!req.body.complete
   Task.create(req.body, function(err) {
     console.log(err)
-    res.redirect('/tasks')
+    res.redirect(`/games/${req.body.game}`)
   })
 }
 
