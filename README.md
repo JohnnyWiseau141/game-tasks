@@ -28,7 +28,7 @@ Trello board can be found [here](https://trello.com/b/9UfZxO7H/gaming-tasklist)
 - method-override
 - passport.js
 
-##Future changes
+## Future changes
 
 - Be able to search for games using an API
 - Day tracker so you can see past checklists without clogging up the page
