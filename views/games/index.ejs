@@ -15,7 +15,7 @@
       <%=game.title%> - Tasks Completed? <%= game.complete? '✅' : '❌' %>  
       <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
         <a href="/games/<%= game._id %>">Edit game and completion status</a>
-        <button type="submit">DELETE</button>
+        <button type="submit" class="warning">DELETE GAME</button>
   
       </form>
     </li>
