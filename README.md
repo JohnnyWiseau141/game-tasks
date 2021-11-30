@@ -13,7 +13,7 @@ Trello board can be found [here](https://trello.com/b/9UfZxO7H/gaming-tasklist)
 
 
 
-### Tachnologies used:
+### Technologies used:
 
 - JavaScript
 - ejs
